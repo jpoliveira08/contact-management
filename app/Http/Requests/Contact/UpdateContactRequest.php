@@ -21,10 +21,12 @@ class UpdateContactRequest extends FormRequest
      */
     public function rules(): array
     {
+        $contactId = $this->route('contact')->id;
+
         return [
             'name' => ['required', 'string', 'min:5', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:contacts'],
-            'contact' => ['required', 'numeric', 'size:9', 'unique:contacts'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:contacts,email,' . $contactId],
+            'contact' => ['required', 'numeric', 'digits:9', 'unique:contacts,contact,' . $contactId],
         ];
     }
 }
