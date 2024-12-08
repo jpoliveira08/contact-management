@@ -48,4 +48,17 @@ class ContactController extends Controller
         return to_route('dashboard')
             ->with('success', __('messages.success'));
     }
+
+    public function delete(Contact $contact)
+    {
+        return view('contacts.delete', compact('contact'));
+    }
+
+    public function destroy(Contact $contact)
+    {
+        $this->contactService->delete($contact);
+
+        return to_route('dashboard')
+            ->with('success', __('messages.success'));
+    }
 }

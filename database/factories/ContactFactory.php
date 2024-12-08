@@ -17,7 +17,9 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'contact' => $this->faker->unique()->numberBetween(100000000, 999999999)
         ];
     }
 }

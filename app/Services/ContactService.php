@@ -24,4 +24,9 @@ class ContactService
             'contact' => $contactDto->contact,
         ]);
     }
+
+    public function delete(Contact $contact)
+    {
+        $contact->delete();
+    }
 }

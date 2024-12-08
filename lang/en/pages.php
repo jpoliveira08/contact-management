@@ -2,8 +2,9 @@
 
 return [
     'headers' => [
-        'create' => 'New Contact',
+        'create' => 'New',
         'show' => 'Contact',
         'edit' => 'Edit',
+        'delete' => 'Delete',
     ]
 ];
