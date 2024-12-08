@@ -15,4 +15,13 @@ class ContactService
            'contact' => $contactDto->contact,
         ]);
     }
+
+    public function update(ContactDto $contactDto, Contact $contact)
+    {
+        $contact->update([
+            'name' => $contactDto->name,
+            'email' => $contactDto->email,
+            'contact' => $contactDto->contact,
+        ]);
+    }
 }
